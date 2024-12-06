@@ -25,7 +25,7 @@ public class registrationForm extends javax.swing.JFrame {
     public boolean isDuplicate(){
         dbConnector connector = new dbConnector();
         try{
-            String query = "SELECT * FROM users_table  WHERE Username = '" + username.getText() + "' OR Email = '" + email.getText() + "'";
+            String query = "SELECT * FROM user_table  WHERE Username = '" + username.getText() + "' OR Email = '" + email.getText() + "'";
             ResultSet resultSet = connector.getData(query);
             
             if (resultSet.next()){
@@ -303,7 +303,7 @@ public class registrationForm extends javax.swing.JFrame {
         } else if (isDuplicate()){
             System.out.println("Duplicate");
         } else {
-            if (dbc.insertData("INSERT INTO users_table(First_Name, Last_Name, Email, Username, Password, Contact, User_type, Status)"
+            if (dbc.insertData("INSERT INTO user_table(First_Name, Last_Name, Email, Username, Password, Contact, User_type, Status)"
                 + "VALUES('" + fname.getText() + "','" + lname.getText() + "','" + email.getText() + "','" + username.getText() + "','" + hashing(password.getText()) + "','" + phoneNumber.getText() + "','" + userType.getSelectedItem() + "','Pending')"))
             {
                 JOptionPane.showMessageDialog(null, "Inserted Successfully.");

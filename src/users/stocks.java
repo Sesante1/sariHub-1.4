@@ -868,7 +868,7 @@ public class stocks extends TransitionsForm {
 //            System.out.println("path: " + path);
 //            System.out.println("oldpath: " + oldpath);
             
-            dbc.updateData("UPDATE product_table SET Product_Name = '"+ productName.getText() +"', Category = '"+ category.getSelectedItem() +"', Quantity = '"+ quantity.getText() +"', "
+            dbc.updateData("UPDATE product_table SET Product_Name = '"+ productName.getText() +"', Category = '"+ category.getSelectedItem() +"', Price = '"+ price.getText() +"', Quantity = '"+ quantity.getText() +"', "
                 + "Product_img = '"+ destination +"' WHERE Id = '"+ pid.getText() +"'");
 
             if (destination.isEmpty()){

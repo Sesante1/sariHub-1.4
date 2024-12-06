@@ -32,7 +32,7 @@ public class sales extends  TransitionsForm{
     
     public static String getCurrentDate() {
         LocalDate today = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         return today.format(formatter);
     }
 //    private void init(){
